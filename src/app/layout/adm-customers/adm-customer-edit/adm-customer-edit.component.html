@@ -1,0 +1,75 @@
+<div class="container">
+    <h1>Profile</h1>
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <div class="row">
+            <div class="col-8">
+                <!--First Name-->
+                <div class="form-group">
+                    <label for="customerFirstName">First Name</label>
+                    <input type="text"
+                           id="customerFirstName"
+                           [(ngModel)]="customer.firstName"
+                           name="customerFirstName"
+                           class="form-control"
+                           minlength="2"
+                           maxlength="30"
+                           required
+                           #n="ngModel">
+                </div>
+                <!--Last Name-->
+                <div class="form-group">
+                    <label for="customerLasttName">Last Name</label>
+                    <input type="text"
+                           id="customerLastName"
+                           [(ngModel)]="customer.lastName"
+                           name="customerLastName"
+                           class="form-control"
+                           minlength="2"
+                           maxlength="30"
+                           required
+                           #n="ngModel">
+                </div>
+                <!--Email-->
+                <div class="form-group">
+                    <label for="customerEmail">Email</label>
+                    <input type="text"
+                           id="cusotmerEmail"
+                           [(ngModel)]="customer.email"
+                           name="customerEmail"
+                           class="form-control"
+                           required
+                           #n="ngModel">
+                </div>
+                <!--Password-->
+                <div class="form-group">
+                    <label for="customerPassword">Password</label>
+                    <input type="text"
+                           id="customerPassword"
+                           [(ngModel)]="customer.password"
+                           name="cusotmerPassword"
+                           class="form-control"
+                           required
+                           #n="ngModel">
+                </div>
+             </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <button class="btn btn-primary"
+                        type="submit"[disabled]="!f.valid">Done</button>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-secondary"
+                        type="button"
+                        (click)="onCustomerClear()">Clear</button>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-danger"
+                        type="button"
+                        (click)="onCustomerCancel()">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+

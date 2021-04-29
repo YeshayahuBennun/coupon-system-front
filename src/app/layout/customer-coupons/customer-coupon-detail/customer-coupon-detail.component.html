@@ -1,0 +1,24 @@
+<div class="coupon">
+    <div class="container">
+        <h3>Company Logo</h3>
+    </div>
+    <img [src]="coupon.imageUrl" alt="Avatar" style="width:100%;">
+    <div class="container" style="background-color:white">
+        <h2><b>{{coupon.title}}</b></h2>
+        <p>{{coupon.description}} </p>
+    </div>
+    <div class="container">
+        <p>Use Promo Code: <span class="promo">BOH232</span></p>
+        <p type="date">Expires: {{coupon.endDate}}</p>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-12">
+            <div class="btn-group" role="group">
+                <button type="button"
+                        class="btn btn-primary"
+                        (click)="onBack()">Back to the store </button>
+            </div>
+        </div>
+    </div>
+</div>

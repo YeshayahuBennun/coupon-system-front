@@ -1,0 +1,81 @@
+<h1 class="text-center">Coupon System</h1>
+<br>
+<h2 class="text-center">Login</h2>
+
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+<div class="form-group">
+    <label>E-mail</label>
+    <input class="form-control"
+           type="email"
+           name="name"
+           id="email"
+           [(ngModel)]="login.email" required>
+</div>
+<div class="form-group">
+    <label>Password</label>
+    <input class="form-control"
+           type="password"
+           name="password"
+           id="password"
+           [(ngModel)]="login.password" required>
+</div>
+<div class="form-check">
+        <input class="form-check-input"
+               type="radio" 
+               name="customer" 
+               id="customer"
+               value="1"
+               [(ngModel)]="login.category">
+        <label class="form-check-label" for="customer">
+            Login as a Customer
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input"
+               type="radio" 
+               name="company"
+               id="company"
+               value="2"
+               [(ngModel)]=login.category
+               checked>
+        <label class="form-check-label" for="company">
+            Login as a Company
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input"
+               type="radio" 
+               name="admin" 
+               id="admin"
+               value="3"
+               [(ngModel)]="login.category"
+                checked>
+        <label class="form-check-label" for="admin">
+            Login as an Admin
+        </label>
+    </div>
+    <br>
+<button type="submit"
+        class="btn btn-primary btn-block"
+        [disabled]="form.form.invalid">Submit</button>
+       <div>
+                <table>
+                    <tr>
+                    <td>
+                        <div>
+                                <button type="button"
+                                class="btn btn-link btn-block"
+                                [routerLink]="['/create-account']">Register as a Customer</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                                <button type="button"
+                                class="btn btn-link btn-block"
+                                [routerLink]="['/create-company-account']">Register as a Company</button>
+                        </div>
+                    </td>       
+                    </tr>
+                </table>
+            </div>
+</form>

@@ -1,0 +1,29 @@
+<app-header></app-header>
+<br>
+<div class="container">
+  <h5>Select a presentation mode:</h5>
+  <div class="btn-group" role="group">
+    <button class="btn btn-outline-primary"
+            type="button"
+            (click)="onShowByTitle()">by Title</button>
+    <button class="btn btn-outline-primary"
+            type="button"
+            (click)="onShowByStartDate()">by Start Date</button>
+    <button class="btn btn-outline-primary"
+            type="button"
+            (click)="onShowByEndDate()">by End Date</button>
+    <button class="btn btn-primary disabled"
+            type="button"
+            (click)="onCreatNewCoupon()">New Coupon</button>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+      <app-company-coupon-list></app-company-coupon-list>
+    </div>
+    <div class="col-7">
+      <router-outlet></router-outlet>
+    </div>
+  </div>

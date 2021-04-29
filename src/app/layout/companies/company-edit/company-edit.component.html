@@ -1,0 +1,68 @@
+<br>
+<div class="container">
+    <h1>Profile</h1>
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="companyName">Name</label>
+                    <input type="text"
+                    id="companyName"
+                    [(ngModel)]='company.name'
+                    name="companyName"
+                    class="form-control"
+                    minlength="2"
+                    maxlength="30"
+                    required
+                    #n="ngModel">
+                </div>
+                <p *ngIf="!n.valid && n.touched" class="help-block">Please enter
+                     a company name between 2 and 30 characters</p>
+                <div class="form-group">
+                     <label for="companyEmail">Email</label>
+                     <input type="text"
+                     id="companyEmail"
+                     [(ngModel)]="company.email"
+                     name="companyEmail"
+                     class="form-control"
+                     minlength="2"
+                     maxlength="30"
+                     required
+                     #n="ngModel">
+                </div>  
+                <p *ngIf="!n.valid && n.touched" class="help-block">Please enter
+                        a company email between 2 and 30 characters</p>
+                <div class="form-group">
+                      <label for="companyPassword">Password</label>
+                      <input type="text"
+                      id="companyPassword"
+                      [(ngModel)]="company.password"
+                      name="companyPassword"
+                      class="form-control"
+                      minlength="2"
+                      maxlength="30"
+                      required
+                      #n="ngModel">
+                </div>  
+              </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <button class="btn btn-primary"
+                        type="submit"[disabled]="!f.valid"
+                        (click)="onSubmit()">Done</button>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-secondary"
+                        type="button"
+                        (click)="onCompanyClear()">Clear</button>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-danger"
+                        type="button"
+                        (click)="onCompanyCancel()">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
+

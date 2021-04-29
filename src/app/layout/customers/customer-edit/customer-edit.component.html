@@ -1,0 +1,81 @@
+<br>
+<div class="container">
+    <h1>Profile</h1>
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="customerFirstName">First Name</label>
+                    <input type="text"
+                    id="customerFirstName"
+                    [(ngModel)]='customer.firstName'
+                    name="customerFirstName"
+                    class="form-control"
+                    minlength="2"
+                    maxlength="30"
+                    required
+                    #n="ngModel">
+                </div>
+                <p *ngIf="!n.valid && n.touched" class="help-block">Please enter
+                     a customer First Name between 2 and 30 characters</p>
+                <div class="form-group">
+                    <label for="customerLastName">Last Name</label>
+                    <input type="text"
+                    id="customerLastName"
+                    [(ngModel)]="customer.lastName"
+                    name="customerLasttName"
+                    class="form-control"
+                    minlength="2"
+                    maxlength="30"
+                    required
+                    #n="ngModel">
+                </div>  
+                   <p *ngIf="!n.valid && n.touched" class="help-block">Please enter
+                    a customer Last Name between 2 and 30 characters</p>
+                    <div class="form-group">
+                        <label for="customerEmail">Email</label>
+                        <input type="text"
+                        id="customerEmail"
+                        [(ngModel)]="customer.email"
+                        name="customerEmail"
+                        class="form-control"
+                        minlength="2"
+                        maxlength="30"
+                        required
+                        #n="ngModel">
+                    </div>  
+                       <p *ngIf="!n.valid && n.touched" class="help-block">Please enter
+                        a customer email between 2 and 30 characters</p>
+                        <div class="form-group">
+                            <label for="customerPassword">Password</label>
+                            <input type="text"
+                            id="customerPassword"
+                            [(ngModel)]="customer.password"
+                            name="customerPassword"
+                            class="form-control"
+                            minlength="2"
+                            maxlength="30"
+                            required
+                            #n="ngModel">
+                       </div>  
+              </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <button class="btn btn-primary"
+                        type="submit"[disabled]="!f.valid"
+                        (click)="onSubmit()">Done</button>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-secondary"
+                        type="button"
+                        (click)="onCustomerClear()">Clear</button>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-danger"
+                        type="button"
+                        (click)="onCustomerCancel()">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>

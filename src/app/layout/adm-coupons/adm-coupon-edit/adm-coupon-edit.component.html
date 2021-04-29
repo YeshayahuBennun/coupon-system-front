@@ -1,0 +1,115 @@
+<div class="container">
+    <h4>Creating or Editing a Coupon</h4>
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <div class="row">
+            <div class="col-8">
+                <!--Title-->
+                <div class="form-group">
+                    <label for="couponTitle">Title</label>
+                    <input type="text"
+                           id="couponTitle"
+                           [(ngModel)]="coupon.title"
+                           name="couponTitle"
+                           class="form-control"
+                           required
+                           #n="ngModel">
+                </div>
+                <!--Start Date-->
+                <div class="form-group">
+                    <label for="couponStartDate">Start Date</label>
+                    <input type='datetime-local'
+                           id="date"
+                           [(ngModel)]="coupon.startDate"
+                           name="couponStartDate"
+                           class="form-control"
+                           required
+                           #n="ngModel">
+                </div>
+                <!--End Date-->
+                <div class="form-group">
+                    <label for="couponEndtDate">End Date</label>
+                    <input type='datetime-local'
+                           id="date"
+                           [(ngModel)]="coupon.endDate"
+                           name="couponEndDate"
+                           class="form-control"
+                           required
+                           #n="ngModel">
+                </div>
+                <!--Category-->
+                <div class="form-group">
+                    <label for="couponCategory">Category</label>
+                    <input type="number"
+                           id="couponCategory"
+                           [(ngModel)]="coupon.category"
+                           name="couponCategory"
+                           class="form-control"
+                           required
+                           #n="ngModel">
+                </div>
+                <!--Amount -->
+                <div class="form-group">
+                    <label for="couponAmount">Amount</label>
+                    <input type="number"
+                           id="couponAmount"
+                           [(ngModel)]="coupon.amount"
+                           name="couponAmount"
+                           class="form-control"
+                           required
+                           #n="ngModel">
+                </div>
+                <!--Description -->
+                <div class="form-group">
+                    <label for="couponDescription">Description</label>
+                    <input type="text"
+                           id="couponDescription"
+                           [(ngModel)]="coupon.description"
+                           name="couponDescription"
+                           class="form-control"
+                           required
+                           #n="ngModel">
+                </div>
+                <!--Price -->
+                <div class="form-group">
+                    <label for="couponPrice">Price</label>
+                    <input type="text"
+                           id="couponPrice"
+                           [(ngModel)]="coupon.price"
+                           name="couponPrice"
+                           class="form-control"
+                           required
+                           #n="ngModel">
+                </div>
+                <!--ImageUrl -->
+                <div class="form-group">
+                    <label for="couponImageUrl">ImageUrl</label>
+                    <input type="text"
+                           id="couponImageUrl"
+                           [(ngModel)]="coupon.imageUrl"
+                           name="couponImageUrl"
+                           class="form-control"
+                           required
+                           #n="ngModel">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <button class="btn btn-primary"
+                        type="submit"[disabled]="!f.valid">Done</button>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-secondary"
+                        type="button"
+                        (click)="onCouponClear()">Clear</button>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-danger"
+                        type="button"
+                        (click)="onCouponCancel()">Cancel</button>
+            </div>
+        </div>
+    </form>
+     <br>
+    <br>
+</div>

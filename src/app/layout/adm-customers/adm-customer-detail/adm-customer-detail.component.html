@@ -1,0 +1,59 @@
+  
+    <div class="customer">
+        <div class="container">
+            <h3>Customer Avatar</h3>
+        </div>
+            <div class="container" style="background-color:white">
+                <br>
+                <br>
+                <h2>Id:{{customer.id}}</h2>
+            <h2><b>{{customer.firstName}} {{customer.lastName}}</b></h2>
+            <p>{{customer.email}} </p>
+        </div>
+        <br>
+        <table>
+            <tr>
+                <td>
+                    <div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div>
+                                    <button type="button" class="btn btn-primary"
+                                            (click)="onEditCustomer()">Edit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div>
+                                        <button type="button" class="btn btn-secondary"
+                                            (click)="onCancelCustomer()">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div>
+                                        <button type="button" class="btn btn-danger"
+                                            (click)="onDeleteCustomer()">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    

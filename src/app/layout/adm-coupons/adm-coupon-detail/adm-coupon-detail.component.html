@@ -1,0 +1,65 @@
+<div class="coupon">
+    <div class="container">
+        <h3>Company Logo</h3>
+    </div>
+    <img [src]="coupon.imageUrl" alt="Avatar" style="width:100%;">
+    <div class="container" style="background-color:white">
+        <h2><b>{{coupon.title}}</b></h2>
+        <p>{{coupon.description}} </p>
+        <p>$ {{coupon.price}}</p>
+    </div>
+    <div class="container">
+        <p>Use Promo Code: <span class="promo">BOH232</span></p>
+        <p type="date"[ngClass]="expirationWeek ? 'expired':'notExpired'">Expires: {{coupon.endDate}}</p>
+        <p *ngIf="expirationWeek;then expirationNotification"></p>
+        <ng-template #expirationNotification>This coupon will be expirated in this week</ng-template>
+    </div>
+    <br>
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div>
+                                <button type="button"
+                                        class="btn btn-primary"
+                                        (click)="onEditCoupon()">Edit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div>
+                                    <button type="button"
+                                            class="btn btn-secondary"
+                                            (click)="onCancelCoupon()">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div>
+                    <div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div>
+                                    <button type="button"
+                                            class="btn btn-danger"
+                                            (click)="onDeleteCoupon()">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

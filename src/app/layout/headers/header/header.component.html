@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <a class="navbar-brand" href="#">CouponSystem</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link"
+                   routerLinkActive="active" 
+                   (click)="onPerfil()">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                routerLinkActive="active"
+                        (click)="onMyCoupons()">My Coupons</a>
+            </li>
+            <li class="nav-item" >
+                <a class="nav-link"
+                routerLinkActive="active"
+                        (click)="logout()">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
